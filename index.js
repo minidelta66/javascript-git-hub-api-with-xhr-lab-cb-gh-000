@@ -1,7 +1,7 @@
 function showRepositories(event, data) {
   var repos = JSON.parse(this.responseText);
   console.log(repos);
-  const repoList = `<ul>${repos.map(r => '<li>' + r.name + ' - <a href="#" data-repo="' + r.name + ' + <a href="' + r.html_url + '>'' + onclick="getCommits(this)">Get Commits</a></li>').join('')}</ul>`
+  const repoList = `<ul>${repos.map(r => '<li><a href="' + r.html_url + '">' + r.name + ' - <a href="#" data-repo="' + r.name + '" onclick="getCommits(this)">Get Commits</a></li>').join('')}</ul>`
   /* console.log(this.responseText);
   let repoList = "<ul>";
   for(var i=0; i < this.responseText.length; i++) {
